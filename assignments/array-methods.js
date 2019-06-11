@@ -95,3 +95,39 @@ runners.filter(runner => {
     }
     })
 // Problem 3
+// The event director once again DRUNK with power wants the to separate the groups to start the race at different times XS -> 2XL. On top of that he wants each group to be in alphabetical order.\
+let xsRunners = runners.filter(runner => runner.shirt_size === 'XS');
+let sRunners = runners.filter(runner => runner.shirt_size === 'S');
+let mRunners = runners.filter(runner => runner.shirt_size === 'M');
+let lRunners = runners.filter(runner => runner.shirt_size === 'L');
+let xlRunners = runners.filter(runner => runner.shirt_size === 'XL');
+let twoXlRunners = runners.filter(runner => runner.shirt_size === '2XL');
+
+function getRunnersNames (group){
+    let names = [];
+    group.forEach(runner => {
+    names.push(runner.first_name, runner.last_name);
+    })
+    return names;
+}
+
+xsRunnersNames = getRunnersNames(xsRunners);
+xsRunnersNames.sort();
+
+sRunnersNames = getRunnersNames(sRunners);
+sRunnersNames.sort();
+
+mRunnersNames = getRunnersNames(mRunners);
+mRunnersNames.sort();
+
+lRunnersNames = getRunnersNames(lRunners);
+lRunnersNames.sort();
+
+xlRunnersNames = getRunnersNames(xlRunners);
+xlRunnersNames.sort();
+
+twoXlRunnersNames = getRunnersNames(twoXlRunners);
+twoXlRunnersNames.sort();
+
+let drunkEventDirectorWish = xsRunnersNames.concat(sRunnersNames, mRunnersNames, lRunnersNames, xlRunnersNames, twoXlRunnersNames);
+console.log (drunkEventDirectorWish);

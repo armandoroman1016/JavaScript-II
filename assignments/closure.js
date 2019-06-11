@@ -6,7 +6,7 @@ function calorieCounter (name){
   currentCount = 0;
   const addCalories = (calorieAmount) => {
     currentCount += calorieAmount;
-    console.log(calorieMessage + currentCount);
+    return (calorieMessage + currentCount);
   }
   return addCalories;
   }
